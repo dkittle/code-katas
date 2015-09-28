@@ -13,4 +13,8 @@ class ArabicToRomanSpec extends FlatSpec with Matchers {
     }
   }
 
+  it should "return I if passed 1" in {
+    ArabicToRoman roman(1) should be ("I")
+  }
+
 }

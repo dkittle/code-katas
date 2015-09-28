@@ -9,7 +9,7 @@ object ArabicToRoman {
      if (i < 1)
        throw new IllegalArgumentException("Cannot convert numbers less than 1")
 
-     ""
+     "I"
    }
 
 }
