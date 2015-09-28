@@ -6,6 +6,9 @@ package roman
 object ArabicToRoman {
 
    def roman(i: Int): String = {
+     if (i < 1)
+       throw new IllegalArgumentException("Cannot convert numbers less than 1")
+
      ""
    }
 
