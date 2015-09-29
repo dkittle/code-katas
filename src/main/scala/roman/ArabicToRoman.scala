@@ -10,7 +10,9 @@ object ArabicToRoman {
        throw new IllegalArgumentException("Cannot convert numbers less than 1")
 
      i match {
-       case x if 1 < 4 => "I" * i
+       case 5 => "V"
+       case 4 => "IV"
+       case x if i < 4 => "I" * i
      }
    }
 
