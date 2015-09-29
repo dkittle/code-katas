@@ -17,4 +17,12 @@ class ArabicToRomanSpec extends FlatSpec with Matchers {
     ArabicToRoman roman(1) should be ("I")
   }
 
+  it should "return II if passed 2" in {
+    ArabicToRoman roman(2) should be ("II")
+  }
+
+  it should "return III if passed 3" in {
+    ArabicToRoman roman(3) should be ("III")
+  }
+
 }
