@@ -1,5 +1,7 @@
 package roman
 
+import scala.annotation.tailrec
+
 /**
  * Created by don on 15-09-28.
  */
@@ -9,6 +11,7 @@ object ArabicToRoman {
      if (i < 1)
        throw new IllegalArgumentException("Cannot convert numbers less than 1")
 
+     @tailrec
      def buildRoman(i: Int, s: String): String = {
 
        i match {
