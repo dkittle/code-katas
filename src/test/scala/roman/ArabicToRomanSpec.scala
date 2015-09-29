@@ -33,4 +33,32 @@ class ArabicToRomanSpec extends FlatSpec with Matchers {
     ArabicToRoman roman(5) should be ("V")
   }
 
+  it should "return VI if passed 6" in {
+    ArabicToRoman roman(6) should be ("VI")
+  }
+
+  it should "return VIII if passed 8" in {
+    ArabicToRoman roman(8) should be ("VIII")
+  }
+
+  it should "return IX if passed 9" in {
+    ArabicToRoman roman(9) should be ("IX")
+  }
+
+  it should "return X if passed 10" in {
+    ArabicToRoman roman(10) should be ("X")
+  }
+
+  it should "return XX if passed 20" in {
+    ArabicToRoman roman(20) should be ("XX")
+  }
+
+  it should "return XXII if passed 22" in {
+    ArabicToRoman roman(22) should be ("XXII")
+  }
+
+  it should "return XXXIX if passed 39" in {
+    ArabicToRoman roman(39) should be ("XXXIX")
+  }
+
 }
