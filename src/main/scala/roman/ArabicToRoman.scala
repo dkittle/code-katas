@@ -15,11 +15,13 @@ object ArabicToRoman {
      def buildRoman(i: Int, s: String): String = {
 
        i match {
-         case x if x >= 10 => buildRoman(i - i / 10 * 10, "X" * (i / 10))
+         case x if x >= 50 => buildRoman(i - 50, s + "L")
+         case 40 => buildRoman(i - 40, s + "XL")
+         case x if x > 9 && x < 40 => buildRoman(i - i / 10 * 10, "X" * (i / 10))
          case 9 => buildRoman(0, s + "IX")
          case x if x >= 5 => buildRoman(i - 5, s + "V")
          case 4 => buildRoman(i - 4, s + "IV")
-         case x if i < 4 => "" + s + "I" * i
+         case x if i < 4 => s + "I" * i
          case 0 => s
        }
      }
