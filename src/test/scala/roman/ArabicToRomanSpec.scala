@@ -2,71 +2,88 @@ package roman
 
 import org.scalatest.{Matchers, FlatSpec}
 
-/**
- * Created by don on 15-09-28.
- */
 class ArabicToRomanSpec extends FlatSpec with Matchers {
 
   "An Arabic to Roman Numeral Converter" should "throw IllegalArgumentException if passed a number less than 1" in {
     a [IllegalArgumentException] should be thrownBy {
-      ArabicToRoman roman(0)
+      ArabicToRoman.roman(0)
     }
   }
 
   it should "return I if passed 1" in {
-    ArabicToRoman roman(1) should be ("I")
+    ArabicToRoman.roman(1) should be ("I")
   }
 
   it should "return III if passed 3" in {
-    ArabicToRoman roman(3) should be ("III")
+    ArabicToRoman.roman(3) should be ("III")
   }
 
   it should "return IV if passed 4" in {
-    ArabicToRoman roman(4) should be ("IV")
+    ArabicToRoman.roman(4) should be ("IV")
   }
 
   it should "return V if passed 5" in {
-    ArabicToRoman roman(5) should be ("V")
+    ArabicToRoman.roman(5) should be ("V")
   }
 
   it should "return VI if passed 6" in {
-    ArabicToRoman roman(6) should be ("VI")
+    ArabicToRoman.roman(6) should be ("VI")
   }
 
   it should "return VIII if passed 8" in {
-    ArabicToRoman roman(8) should be ("VIII")
+    ArabicToRoman.roman(8) should be ("VIII")
   }
 
   it should "return IX if passed 9" in {
-    ArabicToRoman roman(9) should be ("IX")
+    ArabicToRoman.roman(9) should be ("IX")
   }
 
   it should "return X if passed 10" in {
-    ArabicToRoman roman(10) should be ("X")
+    ArabicToRoman.roman(10) should be ("X")
   }
 
   it should "return XI if passed 11" in {
-    ArabicToRoman roman(11) should be ("XI")
+    ArabicToRoman.roman(11) should be ("XI")
   }
 
   it should "return XIX if passed 19" in {
-    ArabicToRoman roman(19) should be ("XIX")
+    ArabicToRoman.roman(19) should be ("XIX")
   }
 
   it should "return XX if passed 20" in {
-    ArabicToRoman roman(20) should be ("XX")
+    ArabicToRoman.roman(20) should be ("XX")
   }
 
   it should "return XXII if passed 22" in {
-    ArabicToRoman roman(22) should be ("XXII")
+    ArabicToRoman.roman(22) should be ("XXII")
   }
 
   it should "return XXXIX if passed 39" in {
-    ArabicToRoman roman(39) should be ("XXXIX")
+    ArabicToRoman.roman(39) should be ("XXXIX")
   }
 
   it should "return XL if passed 40" in {
-    ArabicToRoman roman(40) should be ("XL")
+    ArabicToRoman.roman(40) should be ("XL")
+  }
+
+  it should "return LXXXIX if passed 89" in {
+    ArabicToRoman.roman(89) should be ("LXXXIX")
+  }
+
+  it should "return XCI if passed 91" in {
+    ArabicToRoman.roman(91) should be ("XCI")
+  }
+
+  it should "return CDLXXXIII if passed 483" in {
+    ArabicToRoman.roman(483) should be ("CDLXXXIII")
+  }
+
+  it should "return MMXVII if passed 2017" in {
+    ArabicToRoman.roman(2017) should be ("MMXVII")
+  }
+
+  it should "return MMMCMXCIX if passed 3999" in {
+    ArabicToRoman.roman(3999) should be ("MMMCMXCIX")
   }
 
 }

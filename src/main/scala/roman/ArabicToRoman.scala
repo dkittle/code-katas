@@ -1,31 +1,34 @@
 package roman
 
-import scala.annotation.tailrec
 
-/**
- * Created by don on 15-09-28.
- */
 object ArabicToRoman {
 
-   def roman(i: Int): String = {
-     if (i < 1)
-       throw new IllegalArgumentException("Cannot convert numbers less than 1")
+  def roman(input: Int): String = {
 
-     @tailrec
-     def buildRoman(i: Int, s: String): String = {
+    if (input < 1 || input > 3999)
+      throw new IllegalArgumentException("number out of range (1-3999)")
 
-       i match {
-         case x if x >= 50 => buildRoman(i - 50, s + "L")
-         case 40 => buildRoman(i - 40, s + "XL")
-         case x if x > 9 && x < 40 => buildRoman(i - i / 10 * 10, "X" * (i / 10))
-         case 9 => buildRoman(0, s + "IX")
-         case x if x >= 5 => buildRoman(i - 5, s + "V")
-         case 4 => buildRoman(i - 4, s + "IV")
-         case x if i < 4 => s + "I" * i
-         case 0 => s
-       }
-     }
-     buildRoman(i, "")
-   }
+    val tens = List("", "M", "C", "X")
+    val fives = List("", "D", "L", "V")
+    val ones = List("M", "C", "X", "I")
 
+    val chars = ("0000" + input.toString).takeRight(4).toCharArray
+    val digits = chars.map(x => x.toString.toInt)
+    // A List of 4 lists, each inner list contains the digit to convert, plus the 10s, 5s and 1s numeral for that digit position
+    val data = (digits zip tens zip fives zip ones).map(x => (x._1._1._1, x._1._1._2, x._1._2, x._2))
+    data.map { case (d, t, f, o) => romanDigit(d, t, f, o) }.mkString("")
+  }
+
+  def romanDigit(number: Int, ten: String, five: String, one: String): String = {
+    if (number > 9)
+      throw new IllegalArgumentException("number out of range (0-9)")
+
+    number match {
+      case x if number == 9 => one + ten
+      case x if number > 5 => five + one * (number - 5)
+      case x if number > 3 => one * (5 - number) + five
+      case x if number > 0 => one * x
+      case _ => ""
+    }
+  }
 }
