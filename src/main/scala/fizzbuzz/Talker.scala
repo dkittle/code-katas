@@ -1,8 +1,5 @@
 package fizzbuzz
 
-/**
- * Created by don on 15-09-26.
- */
 object Talker {
 
   def speak(i: Int): String = {
