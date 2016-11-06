@@ -34,3 +34,4 @@ I'm using the following websites for inspriation:
 I'll list the implementations here as I'm trying to do them in order of most simple to more complicated.
 
 * FizzBuzz (http://codingdojo.org/cgi-bin/index.pl?KataFizzBuzz)
+* Roman Numerals (http://codingdojo.org/cgi-bin/index.pl?KataRomanNumerals)
